@@ -1,0 +1,30 @@
+version: '2'
+
+services:
+  haproxy:
+    container_name: haproxy-container
+    image: haproxy:2.5.0
+    volumes: 
+      - ./../haproxy/config:/usr/local/etc/haproxy/
+    ports:
+      - 8080:8080
+      - 8404:8404
+    sysctls:
+      - net.ipv4.ip_unprivileged_port_start=0
+    networks:
+      default:
+        aliases:
+          - haproxy
+  hello:
+    container_name: hello-service
+    image: local-springboot-service:0.0.1
+    volumes:
+      - ./../jars/:/usr/src/app/
+      - ./../springboot_sh/:/usr/src/scripts/
+    environment:
+      - LOGGING_LEVEL=INFO
+      - RUN_SCRIPT=/usr/src/scripts/hello.sh
+    networks:
+      default:
+        aliases:
+          - hello

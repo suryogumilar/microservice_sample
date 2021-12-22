@@ -5,3 +5,4 @@ eclipse/*/.project
 eclipse/*/.dbeaver
 eclipse/*/target
 eclipse/.recommenders/
+jars
