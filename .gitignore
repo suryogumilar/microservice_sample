@@ -6,3 +6,4 @@ eclipse/*/.dbeaver
 eclipse/*/target
 eclipse/.recommenders/
 jars
+haproxy/keys/

@@ -6,8 +6,10 @@ services:
     image: haproxy:2.5.0
     volumes: 
       - ./../haproxy/config:/usr/local/etc/haproxy/
+      - ./../haproxy/keys:/usr/local/security/keys
     ports:
-      - 8080:8080
+      - 443:443
+      - 80:80
       - 8404:8404
     sysctls:
       - net.ipv4.ip_unprivileged_port_start=0
