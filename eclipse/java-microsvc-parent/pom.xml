@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.sg.microservice</groupId>
+	<artifactId>java-microsvc-parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>microservice parent</name>
+	<description>for java</description>
+	<!-- Properties -->
+	<!-- =============================================================== -->
+	<properties>
+
+		<mysql-connector-java.version>8.0.15</mysql-connector-java.version>
+		<spring-boot-starter.version>2.3.3.RELEASE</spring-boot-starter.version>
+		<springframework.version>5.2.8.RELEASE</springframework.version>
+		<mybatis-spring-boot-starter.version>2.1.3</mybatis-spring-boot-starter.version>
+
+		<mybatis.version>3.5.5</mybatis.version>
+		<mybatis-dynamic-sql.version>1.1.4</mybatis-dynamic-sql.version>
+		<mybatis-generator-core.version>1.4.0</mybatis-generator-core.version>
+
+		<!-- ehcache -->
+		<mybatis-ehcache.version>1.2.0</mybatis-ehcache.version>
+		<net.sf.ehcache.version>2.10.6</net.sf.ehcache.version>
+		<!-- redis -->
+		<redis.clients.jedis.version>3.3.0</redis.clients.jedis.version>
+		<!-- JDBC conn pooling -->
+		<com.zaxxer.HikariCP.version>3.3.1</com.zaxxer.HikariCP.version>
+		<!-- Spring cloud -->
+		<spring-cloud.version>Hoxton.SR8</spring-cloud.version>
+		<!-- GCP (dependent ke spring-cloud.version, seperti jika kita pakai Hoxton.SR8 
+			maka gcp version yg dipakai 1.2.5.RELEASE ) -->
+		<org.springframework.cloud.gcp.version>1.2.5.RELEASE</org.springframework.cloud.gcp.version>
+
+		<!-- =============================================================== -->
+		<!-- MAVEN PLUGINS -->
+		<!-- =============================================================== -->
+		<maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
+		<maven-jar-plugin.version>2.4</maven-jar-plugin.version>
+		<maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
+		<maven-resources-plugin.version>2.6</maven-resources-plugin.version>
+		<spring-boot-maven-plugin.version>2.3.3.RELEASE</spring-boot-maven-plugin.version>
+		<maven-mybatis-gen-plugin.version>1.4.0</maven-mybatis-gen-plugin.version>
+		<maven-plugin-properties.version>1.0.0</maven-plugin-properties.version>
+
+		<!-- Java version, Source Encoding -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- setting java version -->
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<java.version>1.8</java.version>
+	</properties>
+</project>

@@ -1,0 +1,7 @@
+eclipse/.metadata/
+eclipse/*/.settings/
+eclipse/*/.classpath
+eclipse/*/.project
+eclipse/*/.dbeaver
+eclipse/*/target
+eclipse/.recommenders/
