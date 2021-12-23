@@ -13,7 +13,9 @@ import org.springframework.stereotype.Component;
  * This class will extend Spring's AuthenticationEntryPoint class and override its method commence. 
  * It rejects every unauthenticated request and send error code 401 
  * */
+@Component
 public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Serializable{
+	private static final long serialVersionUID = 765134341959128785L;
 	@Override
 	public void commence(HttpServletRequest request, HttpServletResponse response,
 			AuthenticationException authException) throws IOException, ServletException {
