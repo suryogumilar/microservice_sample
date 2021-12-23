@@ -20,7 +20,13 @@
 		<mybatis.version>3.5.5</mybatis.version>
 		<mybatis-dynamic-sql.version>1.1.4</mybatis-dynamic-sql.version>
 		<mybatis-generator-core.version>1.4.0</mybatis-generator-core.version>
-
+		
+		<!-- for springboot yaml config enablement -->
+		<jackson-dataformat-yaml.version>2.13.1</jackson-dataformat-yaml.version>
+		<com.lmax.disruptor.version>3.4.2</com.lmax.disruptor.version>
+		<!-- spring boot logging -->
+		<log4j-web.version>2.17.0</log4j-web.version>
+		
 		<!-- ehcache -->
 		<mybatis-ehcache.version>1.2.0</mybatis-ehcache.version>
 		<net.sf.ehcache.version>2.10.6</net.sf.ehcache.version>
@@ -34,12 +40,15 @@
 			maka gcp version yg dipakai 1.2.5.RELEASE ) -->
 		<org.springframework.cloud.gcp.version>1.2.5.RELEASE</org.springframework.cloud.gcp.version>
 
+		<!-- JWT -->
+		<io.jsonwebtoken.version>0.9.1</io.jsonwebtoken.version>
+		<jaxb-api.version>2.3.1</jaxb-api.version>
 		<!-- =============================================================== -->
 		<!-- MAVEN PLUGINS -->
 		<!-- =============================================================== -->
 		<maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
-		<maven-jar-plugin.version>2.4</maven-jar-plugin.version>
-		<maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
+		<maven-jar-plugin.version>3.1.2</maven-jar-plugin.version>
+		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
 		<maven-resources-plugin.version>2.6</maven-resources-plugin.version>
 		<spring-boot-maven-plugin.version>2.3.3.RELEASE</spring-boot-maven-plugin.version>
 		<maven-mybatis-gen-plugin.version>1.4.0</maven-mybatis-gen-plugin.version>
