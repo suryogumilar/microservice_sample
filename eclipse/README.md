@@ -9,3 +9,8 @@ Adalah folder berisis pom parent untuk semua aplikasi yang dikembangkan
 ## java-microsvc-hello
 
 Berisi contoh basic dari rest app menggunakan springboot
+
+## sg-jwt-lib
+
+Library untuk jwt apps seperti untuk authentication
+
