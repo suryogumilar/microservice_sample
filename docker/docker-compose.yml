@@ -30,3 +30,18 @@ services:
       default:
         aliases:
           - hello
+  authentication-jwt-service:
+    container_name: auth-jwt-service
+    image: local-springboot-service:0.0.1
+    volumes:
+      - ./../jars/:/usr/src/app/
+      - ./../springboot_sh/:/usr/src/scripts/
+    environment:
+      - LOGGING_LEVEL=INFO
+      - RUN_SCRIPT=/usr/src/scripts/auth.sh
+    ports:
+      - 8080:8089
+    networks:
+      default:
+        aliases:
+          - authservice
