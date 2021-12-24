@@ -45,3 +45,18 @@ services:
       default:
         aliases:
           - authservice
+  hello-jwt-service:
+    container_name: hello-jwt-service
+    image: local-springboot-service:0.0.1
+    volumes:
+      - ./../jars/:/usr/src/app/
+      - ./../springboot_sh/:/usr/src/scripts/
+    environment:
+      - LOGGING_LEVEL=INFO
+      - RUN_SCRIPT=/usr/src/scripts/hello_jwt.sh
+    ports:
+      - 8081:8080
+    networks:
+      default:
+        aliases:
+          - hellojwt

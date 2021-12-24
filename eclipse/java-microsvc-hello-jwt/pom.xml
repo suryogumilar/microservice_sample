@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.sg.microservice</groupId>
+		<artifactId>java-microsvc-rest-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>java-microsvc-hello-jwt</artifactId>
+	<!-- ===================== Dependencies ===================== -->
+	<dependencies>
+		<dependency>
+			<groupId>com.sg.microservice</groupId>
+			<artifactId>java-jwt-microsvc-authentication-config</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sg.microservice</groupId>
+			<artifactId>sg-jwt-lib</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<!-- Final Name -->
+		<finalName>${project.artifactId}-${project.version}</finalName>
+		<plugins>
+			<!-- Clean target plugion -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>${maven-clean-plugin.version}</version>
+				<configuration>
+					<failOnError>false</failOnError>
+				</configuration>
+			</plugin>
+
+			<!-- Compiler plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<!-- Package as an executable jar/war -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring-boot-maven-plugin.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

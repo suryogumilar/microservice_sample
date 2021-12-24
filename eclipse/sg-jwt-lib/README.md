@@ -24,7 +24,9 @@ Untuk tiap request yang masuk, script ini akan dijalankan. Akan memeriksa apakah
 
 If it has a valid JWT Token, then it sets the authentication in context to specify that the current user is authenticated.
 
-akan diinclude oleh class yang memerlukan jwt token.
+akan diinclude oleh class yang memerlukan operasi jwt token.   
+Jika suatu class include `SgWebSecurityConfig` pada konfigurasinya maka Class ini akan include.
+Pada `SgWebSecurityConfig` Class ini dipakai di dalam methode `SgWebSecurityConfig.configure(HttpSecurity httpSecurity)` pada bagian baris kode `httpSecurity.addFilterBefore()` untuk validasi token pada setiap request
 
    
 Class ini menggunakan class `JwtTokenUtil` untuk operasi yang token related (generate dll) dan `JwtUserDetailsService` 
