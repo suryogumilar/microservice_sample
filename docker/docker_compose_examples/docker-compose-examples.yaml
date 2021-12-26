@@ -1,0 +1,77 @@
+version: '2.4'
+
+services:
+  haproxy:
+    container_name: haproxy
+    image: haproxy:2.5.0
+    volumes:
+      - type: bind
+        source: ./../haproxy/config
+        target: /usr/local/etc/haproxy/
+      - type: bind
+        source: ./../haproxy/keys
+        target: /usr/local/security/keys
+    ports:
+      - 443:443
+      - 80:80
+      - 8404:8404
+    sysctls:
+      - net.ipv4.ip_unprivileged_port_start=0
+    networks:
+      webnet:
+        aliases:
+          - haproxy
+
+  mariadb:
+    container_name: mariadb
+    image: mariadb:10.7
+    volumes:
+      - type: volume
+        source: mariadisk
+        target: /var/lib/mysql
+    ports:
+      - 33060:33060
+      - 3306:3306
+    env_file:
+      - ./../maria_env/mysql.env
+    networks:
+      webnet:
+        aliases:
+          - mariadb
+
+  pythonhello:
+    container_name: pythonhello
+    image: pythonflaskhello:0.0.1
+    networks:
+      webnet:
+        aliases:
+          - pythonhello
+  pythonmqtt:
+    container_name: pythonmqtt
+    image: pythonmqtt:0.0.1
+    ports:
+      - 105:105
+      - 1883:1883
+    networks:
+      webnet:
+        aliases:
+          - pythonmqtt
+
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin/phpmyadmin:5.1.0
+    ports:
+     - 8080:80
+    environment:
+     - PMA_HOST=mariadb
+     - PMA_PORT=3306
+    networks:
+      webnet:
+        aliases:
+          - phpmyadmin
+
+networks:
+  webnet:
+
+volumes:
+  mariadisk:
