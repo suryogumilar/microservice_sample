@@ -3,7 +3,7 @@ version: '2'
 services:
   haproxy:
     container_name: haproxy-container
-    image: haproxy:2.5.0
+    image: haproxy:2.4
     volumes: 
       - ./../haproxy/config:/usr/local/etc/haproxy/
       - ./../haproxy/keys:/usr/local/security/keys
